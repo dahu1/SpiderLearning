@@ -25,8 +25,8 @@ def process(filename):
 if __name__ == '__main__':
     gen=process('tmp')
     for line in gen:
-        if re.search('^[^"].*\w',line):
-            # print line,
+        if re.search('^[^"].*\w',line) or re.search('^\w',line):
+            print line,
             a=[]
             b=line.strip().decode('utf-8')  #解码,技巧,用len查看string,根据大小来判断是否要加解码
             # print [i for i in b]
@@ -44,7 +44,8 @@ if __name__ == '__main__':
             line=''.join([i.strip()+'\n' for i in line.split('\n') if i!=''])    #去除空格
             # print [i for i in line]  #列表查看下,可以看清楚每个字节到底是什么
             print line,
-        else:
-            print line,
+            break
+        # else:
+        #     print line,
 
 
