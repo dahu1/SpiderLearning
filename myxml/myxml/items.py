@@ -8,11 +8,10 @@
 import scrapy
 
 
-class QuotesbotItem(scrapy.Item):
+class MyxmlItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    urlname=scrapy.Field()
-    urlkey=scrapy.Field()
-    urlcr=scrapy.Field()
-    urladdr=scrapy.Field()
+    title=scrapy.Field()
+    link=scrapy.Field()
+    author=scrapy.Field()
     pass
