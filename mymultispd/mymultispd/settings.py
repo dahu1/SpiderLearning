@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for myxml project
+# Scrapy settings for mymultispd project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,15 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'myxml'
+BOT_NAME = 'mymultispd'
 
-SPIDER_MODULES = ['myxml.spiders']
-NEWSPIDER_MODULE = 'myxml.spiders'
-COMMANDS_MODULE='myxml.mycmd'   #设置新加的命令模块
+SPIDER_MODULES = ['mymultispd.spiders']
+NEWSPIDER_MODULE = 'mymultispd.spiders'
+COMMANDS_MODULE='mymultispd.mycmd'   #设置新加的命令模块,原有的crawl可以继续用
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'myxml (+http://www.yourdomain.com)'
+#USER_AGENT = 'mymultispd (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -27,13 +28,16 @@ ROBOTSTXT_OBEY = True
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+#爬虫下载网页的时间间隔为3秒,默认是关闭的
+DOWNLOAD_DELAY = 1
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+#默认是开启cookies的,关闭cookies的话,可以让部分网站无法禁止我们爬取,那我们以后尽量关掉
+COOKIES_ENABLED = False
+
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -47,13 +51,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'myxml.middlewares.MyxmlSpiderMiddleware': 543,
+#    'mymultispd.middlewares.MymultispdSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'myxml.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'mymultispd.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,7 +69,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'myxml.pipelines.MyxmlPipeline': 300,
+#    'mymultispd.pipelines.MymultispdPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
