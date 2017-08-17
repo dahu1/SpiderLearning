@@ -15,9 +15,9 @@ sys.setdefaultencoding('utf8')
 #         print j,i[j]
 
 #处理jl格式
-with open('tieba.jl','r') as f:
+with open('tieba.kindle.jl','r') as f:
     data=f.readlines()
-with open('tieba.txt','w') as f:
+with open('tieba.kindle.txt','w') as f:
     for i in data:
         item=json.loads(i)
         for j in item:
