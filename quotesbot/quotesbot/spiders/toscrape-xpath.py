@@ -15,6 +15,7 @@ class ToScrapeSpiderXPath(scrapy.Spider):
                 'author': quote.xpath('.//small[@class="author"]/text()').extract_first(),
                 'tag': quote.xpath('.//div[@class="tags"]/a[@class="tag"]/text()').extract()
             }
+            print quote.xpath('./span[@class="text"]/text()').extract_first()
 
         next_page_url = response.xpath('//li[@class="next"]/a/@href').extract_first()
         if next_page_url is not None:
