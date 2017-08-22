@@ -11,14 +11,6 @@ balance = 0
 def change_it(n):
     # 先存后取，结果应该为0:
     global balance
-def consumer():
-  r = 'here'
-  for i in xrange(3):
-    yield r
-    r = '200 OK'+ str(i)
-
-c = consumer()
-n1 = c.next()
     balance = balance + n
     balance = balance - n
 
