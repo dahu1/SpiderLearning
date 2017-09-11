@@ -131,3 +131,5 @@ def testHandWritingClass():
     ## step 4: show the result
     print "step 4: show the result..."
     print 'The classify accuracy is: %.2f%%' % (accuracy * 100)
+if __name__ == '__main__':
+    testHandWritingClass()
